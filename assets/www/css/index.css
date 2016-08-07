@@ -1,0 +1,116 @@
+body {
+  background-attachment: fixed;
+  background-size: auto;
+ }
+ 
+.head {
+ background: rgba(130, 130, 130, 0.4);
+ box-shadow: 0px 1px 10px #434950;
+ background-attachment: fixed;
+ position: fixed;
+ top: 0;
+ left: 0;
+ height: 50px;
+ width: 100%;
+ padding-top: 10px;
+ padding-bottom: 10px;
+ color: White;
+ text-shadow: 1px 1px 5px #888888;
+ z-index: 50;
+}
+
+p ,.about ,.help {
+ background-color: White;
+ width: 85%;
+ padding: 25px;
+ text-align: left;
+ border-radius: 2px;
+}
+
+.search ,.write {
+ background-color: #49535E;
+ color: White;
+ width: 85%;
+ padding: 25px;
+ text-align: left;
+ border-radius: 2px;
+ box-shadow: 0px 0px 15px #434950;
+}
+
+.but {
+ color: White;
+ background-color: #4A82FF;
+ border-width: 1px;
+ border-color: #ffffff;
+ border-style: solid;
+ border-radius: 2px;
+ font-size: 26px;
+ height: 45px;
+ width: 45px;
+}
+
+.menu {
+ background-color: #49535E;  /*#6C7B88*/
+ color: White;
+ position: fixed;
+ top: 70px;
+ left: 0px;
+ width: 80%;
+ height:100%;
+ box-shadow: 0px 2px 2px 2px #555555;
+}
+
+.menuitem {
+ position: absolute;
+ left: 0px;
+ height: 40px;
+ padding: 20px;
+ width: 90%;
+ font-size: 30px;
+}
+
+.buttona {
+ background-color: #999999;
+ padding: 3px;
+ color: White;
+ border: 1px;
+ border-color: #555555;
+ border-style: solid;
+ border-radius: 3px;
+}
+
+.confirm {
+ background-color: #49535E;
+ color: White;
+ border-radius: 2px;
+ width: 80%;
+ padding: 5%;
+ text-align: left;
+ z-index: 3;
+ box-shadow: 0px 0px 15px #434950;
+ position: fixed;
+ top: 45%;
+ left: 5%;
+}
+
+.buttonb {
+ background-color: #49535E;
+ padding: 5px;
+ color: White;
+ border: 1px;
+ border-color: White;
+ font-size: 20px;
+ border-style: solid;
+ border-radius: 3px;
+}
+
+.buttonc {
+ color: White;
+ background-color: #4A82FF;
+ border-width: 1px;
+ border-color: #ffffff;
+ border-style: solid;
+ border-radius: 2px;
+ padding: 4px;
+}
+

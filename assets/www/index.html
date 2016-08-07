@@ -1,0 +1,181 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>My Page</title> 
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head> 
+	<body bgColor="#cccccc" background="img/backlarge.jpg"> 
+	<font size=5 face="arial">
+	  <span class="head">
+		<span style="position:fixed;top:15px;left:20px;"><font size=6><b>Hrily notes</b></font></span>
+		<span style="position:fixed;top:11px;left:100%;margin-left:-60px;"><img id="hdbtn" src="img/write.jpg" class="but" onClick="menushow();"></span>
+			<span id="m1" style="position:fixed;top:-4px;left:-3px;"><font size=6>_</font></span>
+			<span id="m2" style="position:fixed;top:3px;left:-3px;"><font size=6>_</font></span>
+			<span id="m3" style="position:fixed;top:10px;left:-3px;"><font size=6>_</font></span>
+		<span style="position:fixed;top:0px;left:0px;height:70px;width:190px;" onclick="menbt();$('#menu').toggle('fast');delhide();">&nbsp;</span>
+	  </span>
+		
+
+				
+			  <br><br><br>
+			  <center>
+			  <form onsubmit="return saveText(0)" class="write">
+				
+				<label for="str">Write:</label><br>
+				<textarea id="str" rows=4 cols=30 style="background-color:#eeeeee;"></textarea><br>
+
+				<input type="submit" value="Write" class="buttonb"/>
+				<input type="button" value="Cancel" class="buttonb" onClick="$('.write').hide('fast',function(){$('p').show('fast');})" />
+			  </form>
+			  
+			  <form class="search">
+				<label for="query">Search:</label><br>
+				<input type="text" size=30 id="query" style="border:1px;border-radius:3px"/><br>
+				<input type="button" value="Search" class="buttonb" onclick="srch();" />
+				<input type="button" value="Cancel" class="buttonb" onClick="readText();$('.search').hide('fast',function(){$('p').show('fast');$('#srbtn').show('fast');})" />
+			  </form>
+			  </center>			  
+	  		  
+			  <form class="confirm">
+				Are you sure you want to delete this note?<br>
+				<input class="buttonb" type="button" onclick="" id="cbtn" value="Yes"/>
+				<input class="buttonb" type="button" onclick="$('.confirm').hide('fast');" value="Cancel"/>
+			  </form>
+			  
+
+			<center>
+			  <span id="texts">
+				<p>Write something to see...</p>
+			  </span>
+			</center>
+			
+	  		<img id="srbtn" style="position:fixed;z-index:5;box-shadow: 0px 0px 5px 0px #555555;" src="img/search.jpg" class="but" onClick="srchshow();">
+			
+			
+			<span id="menu" class="menu">
+			  <span class="menuitem" style="top:5px;" onclick="$('#menu').toggle('fast');menushow();menbt();"><img src="img/write.jpg" class="but" align="center"><span style="position:absolute;top:27px;left:85px">Write</span></span>
+			  <span class="menuitem" style="top:75px;" onclick="srchshow();"><img src="img/search.jpg" class="but" align="center"><span style="position:absolute;top:27px;left:85px">Search</span></span>
+			  <span class="menuitem" style="top:145px;" onclick="delshow();"><img src="img/delete.jpg" class="but" align="center"><span style="position:absolute;top:27px;left:85px">Delete Notes</span></span>
+			  <span class="menuitem" style="top:215px;" onclick="abtshow();"><img src="img/about.jpg" class="but" align="center"><span style="position:absolute;top:27px;left:85px">About</span></span>
+			  <span class="menuitem" style="top:285px;" onclick="helpshow();"><img src="img/q.jpg" class="but" align="center"><span style="position:absolute;top:27px;left:85px">Help</span></span>
+			</span>
+			
+			
+			<center>
+				<div id="about" class="about">
+			  	  <img src="img/logo.jpg" style="padding-right:20px;height:200px;width:200px;" align="left"/>
+				  <font color="#1E51D1">
+					<font size=7><b>Hrily Notes</b></font> v1.0<br>
+				  </font>
+				  By: Hrishi Hiraskar<br>
+				  <br><br><br>
+				  <b>Contact:</b><br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;Email: <a href="mailto:hrishihiraskar@gmail.com">hrishihiraskar@gmail.com</a><br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;Facebook: <a href="http://www.facebook.com/hrishi.hiraskar7/">www.facebook.com/hrishi.hiraskar7/</a><br><br>
+				  <center><input type="button" class="buttonc" onclick="abthide();" value="&nbsp;&nbsp;&nbsp;OK&nbsp;&nbsp;&nbsp;"></center>
+				</div>
+			</center>
+			
+			
+			<center>
+			  <span id="help">
+			  <div class="help">
+				<b>Header:</b><br>
+				<img src="img/h-head.jpg" style="width:100%">
+			  </div><br>
+			  <div class="help">
+				<b>Menu:</b><br>
+				<img src="img/h-menu.jpg" style="width:100%">
+				<br>
+				<u>Write:</u> Write a new note<br>
+				<u>Search:</u> Search a note<br>
+				<u>Delete:</u> notes: Delete unwanted notes<br>
+				<u>About:</u> About Hrily notes<br>
+			  </div><br>
+			  <div class="help">
+				<b>Write:</b><br>
+				<img src="img/h-write.jpg" style="width:100%">
+			  </div><br>
+			  <div class="help">
+				<b>Search:</b><br>
+				<img src="img/h-search.jpg" style="width:100%">
+			  </div><br>
+			  <div class="help">
+				<b>Long press text to copy or share</b>
+				<img src="img/h-text.jpg" style="width:100%">
+			  </div><br>
+			  <div class="help" onclick="$('#help').hide('fast');$('p').show('fast');">
+				<center>Back</center>
+			  </div><br>
+			  </span>
+			</center>
+				
+				
+			
+	  		
+			
+
+		
+	</font>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" ysrc="js/jquery.mobile-1.3.0.min.js"></script>
+		<script type="text/javascript" src="js/cordova.js"></script>
+		<script type="text/javascript" src="js/index1.js"></script>		
+		<script type="text/javascript" src="js/index.js"></script>
+
+
+	
+	
+  <script type="text/javascript">
+		$(".write").hide();
+		$("#menu").hide();
+		$(".search").hide();
+		$("#about").hide();
+		$(".confirm").hide();
+		$("#help").hide();
+		$("#srbtn").css('top',window.innerHeight-60).css('left',window.innerWidth-60);
+		var wh=window.innerHeight,ww=window.innerWidth;
+		setInterval(function(){
+						if(wh!=window.innerHeight || ww!=window.innerWidth)
+						{$("#srbtn").css('top',window.innerHeight-60).css('left',window.innerWidth-60);wh=window.innerHeight;ww=window.innerWidth;}
+							   },1000);
+		var t=0;
+		function menbt()
+		{
+		 if(t==0)
+		 {
+		  $("#m1").css('left','-7px');
+		  $("#m2").css('left','-7px');
+		  $("#m3").css('left','-7px');
+		  t=1;
+		 }
+		 else
+		 {
+		  $("#m1").css('left','-3px');
+		  $("#m2").css('left','-3px');
+		  $("#m3").css('left','-3px');
+		  t=0;
+		 }
+		}
+		
+		
+		
+	/*	 <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>
+				  <p>Testing<br><br><br><br><br></p>    */
+		
+	</script>
+        		
+	</body>
+</html>
